@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#define NUM 10
 /*******************************************
 * 主题：算法学习
 * 算法：归并排序
@@ -18,23 +18,27 @@ void MergeSort(int arr[], int N);
 int main()
 {
     // 生成测试数据并打印
-    const int N = 10;
-    int a[N] = {100, 45, 65, 34, 87, 89, 57, 230, 56, 59};
+    int a[NUM] = {100, 45, 65, 34, 87, 89, 57, 230, 56, 59};
     printf("before sort:\n");
-    for (int i = 0; i < N; ++i)
+    for (int i = 0; i < NUM; ++i)
         printf("%d ", a[i]);
 
     //调用封装好的【归并排序】算法
-    MergeSort(a, 11); 
+    MergeSort(a, NUM); 
 
     //打印排序后的结果，与排序前比较。
     printf("\n\nafter sort:\n");
-    for (int i = 0; i < N; ++i) 
+    for (int i = 0; i < NUM; ++i) 
         printf("%d ", a[i]);
     return 0;
 }
 
 //******************函数区*****************
+
+void Merge()
+{
+
+}
 void MergeSortRecursive(int arr[], int temp[], int start, int end)
 {
     if (start >= end)//递归终止条件
